@@ -1,0 +1,61 @@
+/* ==================== FOLLOW BUTTON ==================== */
+
+.follow-btn,
+.unfollow-btn {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.follow-btn:hover {
+  background: #0080d0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.follow-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.follow-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.unfollow-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.unfollow-btn:hover {
+  border-color: var(--danger-red);
+  color: var(--danger-red);
+  background: rgba(237, 73, 86, 0.05);
+}
+
+.unfollow-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 479px) {
+  .follow-btn,
+  .unfollow-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 12px;
+  }
+}

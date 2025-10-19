@@ -1,0 +1,125 @@
+/* ==================== CUSTOM CURSOR ==================== */
+
+/* Global Cursor */
+* {
+  cursor: inherit;
+}
+
+html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="rgba(0,149,246,0.8)" d="M2 2l24 10-10 2 6 14-3 2-6-14-2 10L2 2z"/><path fill="none" stroke="rgba(0,149,246,0.2)" stroke-width="0.5" d="M2 2l24 10-10 2 6 14-3 2-6-14-2 10L2 2z"/></svg>') 2 2, auto;
+}
+
+body.dark {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="rgba(255,255,255,0.9)" d="M2 2l24 10-10 2 6 14-3 2-6-14-2 10L2 2z"/><path fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" d="M2 2l24 10-10 2 6 14-3 2-6-14-2 10L2 2z"/></svg>') 2 2, auto;
+}
+
+/* Pointer Cursor for Interactive Elements */
+button,
+a,
+[role="button"],
+[role="link"],
+.cursor-pointer,
+input[type="checkbox"],
+input[type="radio"],
+select {
+  cursor: pointer;
+}
+
+button:hover,
+a:hover,
+[role="button"]:hover,
+[role="link"]:hover,
+.hover\:cursor-pointer:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="rgba(0,149,246,0.6)" stroke-width="1"/><circle cx="16" cy="16" r="3" fill="rgba(0,149,246,0.8)"/></svg>') 16 16, pointer;
+}
+
+body.dark button:hover,
+body.dark a:hover,
+body.dark [role="button"]:hover,
+body.dark [role="link"]:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/><circle cx="16" cy="16" r="3" fill="rgba(255,255,255,0.9)"/></svg>') 16 16, pointer;
+}
+
+/* Text Cursor for Text Input */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+textarea {
+  cursor: text;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  cursor: text;
+}
+
+/* Not Allowed Cursor */
+button:disabled,
+[disabled],
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/* Grab Cursor for Draggable Elements */
+[draggable="true"],
+.cursor-grab {
+  cursor: grab;
+}
+
+[draggable="true"]:active,
+.cursor-grab:active {
+  cursor: grabbing;
+}
+
+/* Resize Cursors */
+.cursor-col-resize {
+  cursor: col-resize;
+}
+
+.cursor-row-resize {
+  cursor: row-resize;
+}
+
+/* Wait Cursor */
+.cursor-wait {
+  cursor: wait;
+}
+
+/* Progress Cursor */
+.cursor-progress {
+  cursor: progress;
+}
+
+/* Zoom Cursors */
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.cursor-zoom-out {
+  cursor: zoom-out;
+}
+
+/* Help Cursor */
+.cursor-help {
+  cursor: help;
+}
+
+/* Move Cursor */
+.cursor-move {
+  cursor: move;
+}
+
+/* Smooth Cursor Transition */
+@supports (cursor: url('data:image/svg+xml;utf8,')) {
+  html {
+    transition: cursor 0.15s ease;
+  }
+}

@@ -1,0 +1,118 @@
+/* ==================== CHANNEL CARD ==================== */
+
+.verified-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-blue);
+  animation: float 3s ease-in-out infinite;
+}
+
+
+.channel-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  animation: slideUp 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.channel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--instagram-gradient);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.channel-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-lg);
+}
+
+.channel-card:hover::before {
+  transform: scaleX(1);
+}
+
+.avatar-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-lg);
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 479px) {
+  .avatar-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+  }
+}
+
+.channel-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.channel-meta {
+  margin-bottom: var(--spacing-lg);
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.channel-title {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin: 0;
+}
+
+@media (max-width: 479px) {
+  .channel-title {
+    font-size: 18px;
+  }
+}
+
+.verified-mark {
+  color: var(--primary-blue);
+  font-size: 18px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.channel-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.channel-email {
+  font-size: 13px;
+  color: var(--primary-blue);
+  text-decoration: none;
+  word-break: break-all;
+}

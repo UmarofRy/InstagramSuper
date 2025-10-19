@@ -1,0 +1,73 @@
+/* ==================== APP SHELL ==================== */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  transition: background-color var(--transition-base);
+}
+
+.page-container {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg);
+  transition: background-color var(--transition-base);
+  padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--spacing-xl);
+  color: var(--text);
+  padding: var(--spacing-lg);
+}
+
+@media (max-width: 479px) {
+  .page-title {
+    font-size: 24px;
+    padding: var(--spacing-md);
+  }
+}
+
+.error-container {
+  background: rgba(237, 73, 86, 0.1);
+  border: 1px solid var(--danger-red);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg);
+  color: var(--danger-red);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  animation: shake 0.4s ease;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 14px;
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+
+.field-input::placeholder {
+  color: var(--placeholder);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 149, 246, 0.1);
+}

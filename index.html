@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Discovery -->
+    <title>Umarov - InstaTok</title>
+    <meta name="description" content="InstaTok - A premium social media platform merging Instagram and TikTok features. Share, discover, and connect with creators worldwide. Real-time messaging, beautiful design, and seamless sharing." />
+    <meta name="keywords" content="social media, Instagram, TikTok, InstaTok, sharing, creator, content, messaging, real-time, community" />
+    <meta name="author" content="Umarov" />
+    <meta name="copyright" content="©2025 InstaTok. All rights reserved." />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:title" content="InstaTok - Premium Social Media Platform" />
+    <meta property="og:description" content="A modern social platform merging Instagram and TikTok features. Real-time messaging, beautiful design, and seamless sharing." />
+    <meta property="og:image" content="/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="InstaTok" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:title" content="InstaTok - Premium Social Media" />
+    <meta name="twitter:description" content="Share your moments, discover trends, and connect with the community." />
+    <meta name="twitter:image" content="/logo.png" />
+    <meta name="twitter:creator" content="@instatokapp" />
+    
+    <!-- App Icon & Theme -->
+    <meta name="theme-color" content="#0095f6" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="shortcut icon" href="/logo.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="InstaTok" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+    <link rel="dns-prefetch" href="https://689c7c5858a27b18087e5fc6.mockapi.io" />
+    <link rel="dns-prefetch" href="https://688a16e14c55d5c73954f244.mockapi.io" />
+    <link rel="dns-prefetch" href="https://68f28407b36f9750deece249.mockapi.io" />
+    <link rel="dns-prefetch" href="https://68986980ddf05523e55ed4e8.mockapi.io" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossOrigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+    
+    <!-- Service Worker Registration for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      }
+    </script>
+  </body>
+</html>

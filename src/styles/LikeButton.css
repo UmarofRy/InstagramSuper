@@ -1,0 +1,61 @@
+/* ==================== LIKE BUTTON ==================== */
+
+.like-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-sm) 0;
+  transition: all var(--transition-base);
+}
+
+.like-btn:hover {
+  color: var(--danger-red);
+}
+
+.like-btn:active {
+  transform: scale(0.95);
+}
+
+.like-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: all var(--transition-base);
+}
+
+.like-btn.liked {
+  color: var(--danger-red);
+}
+
+.like-btn.liked svg {
+  fill: var(--danger-red);
+  stroke: var(--danger-red);
+  animation: heartBeat 0.6s ease;
+}
+
+.like-count {
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+.like-label {
+  opacity: 0.9;
+}
+
+/* Heart Burst Animation */
+.heart-burst {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: var(--danger-red);
+  pointer-events: none;
+  animation: heartBurst 0.6s ease-out forwards;
+  font-size: 20px;
+}

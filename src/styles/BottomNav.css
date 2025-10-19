@@ -1,0 +1,52 @@
+/* Bottom Navigation - Instagram style */
+:root { --bottom-nav-height: 68px; }
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
+  padding: 8px max(12px, env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-right));
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.06);
+  z-index: var(--z-fixed);
+}
+
+.bottom-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 14px;
+  position: relative;
+  transition: color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+  background: var(--card-bg);
+  box-shadow: var(--neomorph);
+}
+
+.bottom-nav-link svg { width: 22px; height: 22px; }
+
+.bottom-nav-link:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.bottom-nav-link.active { color: var(--accent); box-shadow: 0 6px 18px rgba(0,149,246,0.25); }
+
+/* subtle glow */
+.bottom-nav-link.active::after, .bottom-nav-link:hover::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 14px;
+  box-shadow: 0 0 0 2px rgba(0,149,246,0.08) inset;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) { .bottom-nav { height: var(--bottom-nav-height); } }

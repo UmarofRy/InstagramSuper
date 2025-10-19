@@ -1,0 +1,111 @@
+/* ==================== LOADING SPINNER ==================== */
+
+.loading-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+  gap: var(--spacing-xl);
+}
+
+/* Spinner Container */
+.spinner {
+  display: inline-block;
+  position: relative;
+}
+
+.spinner-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.spinner-md {
+  width: 48px;
+  height: 48px;
+}
+
+.spinner-lg {
+  width: 64px;
+  height: 64px;
+}
+
+/* Spinner Rings */
+.spinner-ring {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 3px solid rgba(0, 149, 246, 0.2);
+  border-radius: 50%;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgba(0, 149, 246, 0.2) transparent transparent transparent;
+}
+
+.spinner-ring:nth-child(1) {
+  animation-delay: -0.45s;
+  border-top-color: var(--primary-blue);
+}
+
+.spinner-ring:nth-child(2) {
+  animation-delay: -0.3s;
+  border-right-color: var(--primary-blue);
+}
+
+.spinner-ring:nth-child(3) {
+  animation-delay: -0.15s;
+  border-bottom-color: var(--primary-blue);
+}
+
+.spinner-ring:nth-child(4) {
+  border-left-color: var(--primary-blue);
+}
+
+.loading-text {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  animation: typing 1.4s infinite;
+}
+
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 25%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-text {
+  height: 14px;
+  margin-bottom: var(--spacing-md);
+}
+
+.skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1 / 1;
+}
+
+.skeleton-line {
+  height: 12px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.skeleton-line:last-child {
+  margin-bottom: 0;
+}
