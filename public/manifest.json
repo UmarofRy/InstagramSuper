@@ -1,76 +1,127 @@
 {
-  "name": "InstaTok - Premium Social Media Platform",
-  "short_name": "InstaTok",
-  "description": "A premium social media platform merging Instagram and TikTok features. Share, discover, and connect with creators worldwide.",
-  "start_url": "/",
+  "name": "InstaTok – Umarov Premium Platform",
+  "short_name": "Umarov VIP",
+  "description": "A next-gen social media app merging Instagram and TikTok features. Share, connect, and explore trending creators with Umarov Premium.",
+  "start_url": "/?utm_source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
   "orientation": "portrait-primary",
-  "theme_color": "#0095f6",
+  "id": "/?source=pwa",
+  "dir": "ltr",
+  "lang": "en-US",
+  "theme_color": "#0f0f0f",
   "background_color": "#ffffff",
   "prefer_related_applications": false,
+  "categories": ["social", "entertainment", "photo", "video", "productivity"],
+
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/logo.png",
+      "src": "/logo-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/logo.png",
+      "src": "/logo-maskable-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/logo.png",
+      "src": "/logo-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
+
   "screenshots": [
     {
-      "src": "/logo.png",
+      "src": "/screens/screen1.png",
       "sizes": "540x720",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "narrow",
+      "label": "Feed view"
     },
     {
-      "src": "/logo.png",
+      "src": "/screens/screen2.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "Explore trends"
     }
   ],
-  "categories": ["social", "entertainment", "productivity"],
+
   "shortcuts": [
     {
       "name": "Home",
       "short_name": "Home",
       "description": "Go to home feed",
       "url": "/?shortcut=home",
-      "icons": [{"src": "/logo.png", "sizes": "192x192"}]
+      "icons": [{ "src": "/icons/home.png", "sizes": "192x192" }]
     },
     {
       "name": "Messages",
-      "short_name": "Messages",
-      "description": "Go to messages",
+      "short_name": "DMs",
+      "description": "Open your messages",
       "url": "/messages?shortcut=messages",
-      "icons": [{"src": "/logo.png", "sizes": "192x192"}]
+      "icons": [{ "src": "/icons/chat.png", "sizes": "192x192" }]
     },
     {
       "name": "Upload",
       "short_name": "Upload",
       "description": "Upload new content",
       "url": "/upload?shortcut=upload",
-      "icons": [{"src": "/logo.png", "sizes": "192x192"}]
+      "icons": [{ "src": "/icons/upload.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "Go to your profile",
+      "url": "/profile?shortcut=profile",
+      "icons": [{ "src": "/icons/user.png", "sizes": "192x192" }]
+    }
+  ],
+
+  "protocol_handlers": [
+    {
+      "protocol": "web+instatok",
+      "url": "/open?content=%s"
+    }
+  ],
+
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "media",
+          "accept": ["image/*", "video/*"]
+        }
+      ]
+    }
+  },
+
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://umarovi.netlify.app/manifest.json"
     }
   ]
 }
