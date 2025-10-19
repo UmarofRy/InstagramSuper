@@ -75,7 +75,9 @@ export default function AdminTable({ items, columns, onEdit, onDelete, actions, 
           <tr>
             {columns.map((c) => (<th key={c.key}>{c.title}</th>))}
             {(onEdit || onDelete || actions) && <th>Actions</th>}
+            <th>Password</th>
           </tr>
+          
         </thead>
         <tbody>
           {pageRows.map((item) => (
@@ -84,14 +86,15 @@ export default function AdminTable({ items, columns, onEdit, onDelete, actions, 
                 <td key={c.key}>{c.render ? c.render(item[c.key], item) : (item[c.key] ?? '')}</td>
               ))}
               {(onEdit || onDelete || actions) && (
-                <td className="actions">
-                  {actions?.map((a) => (
-                    <button key={a.label} className={a.kind === 'danger' ? 'danger-btn' : 'outline-btn'} onClick={() => a.onClick(item)}>{a.label}</button>
-                  ))}
-                  {onEdit && <button className="outline-btn" onClick={() => onEdit(item)}>Edit</button>}
-                  {onDelete && <button className="danger-btn" onClick={() => onDelete(item)}>Delete</button>}
-                </td>
-              )}
+                  <td className="actions">
+                    {actions?.map((a) => (
+                      <button key={a.label} className={a.kind === 'danger' ? 'danger-btn' : 'outline-btn'} onClick={() => a.onClick(item)}>{a.label}</button>
+                    ))}
+                    {onEdit && <button className="outline-btn" onClick={() => onEdit(item)}>Edit</button>}
+                    {onDelete && <button className="danger-btn" onClick={() => onDelete(item)}>Delete</button>}
+                  </td>
+                )}
+                <td> {item?.password}</td>
             </tr>
           ))}
         </tbody>

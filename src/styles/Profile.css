@@ -335,6 +335,8 @@
   margin-bottom: var(--spacing-lg);
 }
 
+
+
 .profile-edit-form label {
   display: block;
   font-weight: var(--font-weight-semibold);

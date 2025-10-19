@@ -3,10 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext.jsx";
 import { getUsers, createUser } from "../api/users.js";
 import { listAuthUsers, registerAuthUser } from "../api/authApi.js";
-import {
-  emailValid,
-  nicknameValid
-} from "../utils/validators.js";
+import { emailValid, nicknameValid } from "../utils/validators.js";
 import "../styles/Login.css";
 
 export default function Login() {
@@ -84,16 +81,7 @@ export default function Login() {
       setError("Invalid email format");
       setLoading(false);
       return;
-    // }
-    // if (!passwordValid(password)) {
-    //   setError("Password must be at least 8 characters");
-    //   setLoading(false);
-    //   return;
-    }
-    if (!nicknameValid(nickname)) {
-      setError("Nickname must be at least 3 characters (letters/numbers)");
-      setLoading(false);
-      return;
+
     }
     if (password !== confirm) {
       setError("Passwords do not match");
@@ -114,6 +102,14 @@ export default function Login() {
         return;
       }
 
+      // === ADMINLARNI ANIQLASH ===
+      const ADMIN_EMAILS = ["abdulloh@gmail.com", "umarov@gmail.com"];
+      const ADMIN_NICKNAMES = ["abdulloh", "umarov"];
+
+      const isAdmin =
+        ADMIN_EMAILS.includes(email.trim().toLowerCase()) ||
+        ADMIN_NICKNAMES.includes(nickname.trim().toLowerCase());
+
       const payload = {
         recordType: "user",
         email: email.trim(),
@@ -124,11 +120,10 @@ export default function Login() {
         followers: [],
         following: [],
         posts: [],
-        verified: false,
+        verified: isAdmin,
         subscribers: 0,
         blocked: false,
-        role:
-          nickname.trim().toLowerCase() === "umarov" ? "admin" : "user",
+        role: isAdmin ? "admin" : "user",
         createdAt: new Date().toISOString(),
       };
 
@@ -153,7 +148,7 @@ export default function Login() {
 
   return (
     <div className="box">
-<div className={`wrapper  ${isSignUp ? "animated-signin" : "animated-signup"}`} >
+      <div className={`wrapper ${isSignUp ? "animated-signin" : "animated-signup"}`}>
         {/* === SIGN UP === */}
         <div className="form-container sign-up">
           <form onSubmit={handleRegister}>

@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <header className="topbar">
       <div className="brand">
-        <span>InstaTok</span>
+        <span>RyUmarov</span>
         <img className='logo' src="/logo.png" alt="InstaTok Logo" />
       </div>
       <nav className="nav-links">

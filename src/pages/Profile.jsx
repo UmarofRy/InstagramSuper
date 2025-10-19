@@ -113,30 +113,33 @@ export default function Profile() {
           <h3>Profile Settings</h3>
           <form onSubmit={saveProfile}>
             <div className="form-group">
-              <label>Nickname</label>
+              
               <input
                 type="text"
                 value={editData.nickname}
                 onChange={(e) => setEditData({...editData, nickname: e.target.value})}
                 className="field-input"
+                placeholder='Enter nickname'
               />
             </div>
             <div className="form-group">
-              <label>Email</label>
+              
               <input
                 type="email"
                 value={editData.email}
                 onChange={(e) => setEditData({...editData, email: e.target.value})}
                 className="field-input"
+                placeholder='Enter email'
               />
             </div>
             <div className="form-group">
-              <label>Bio</label>
+              
               <textarea
                 value={editData.bio}
                 onChange={(e) => setEditData({...editData, bio: e.target.value})}
                 className="field-textarea"
                 rows="4"
+                placeholder='Enter bio'
               />
             </div>
             <div className="form-actions">
