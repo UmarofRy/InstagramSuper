@@ -103,8 +103,8 @@ export default function Login() {
       }
 
       // === ADMINLARNI ANIQLASH ===
-      const ADMIN_EMAILS = ["abdulloh@gmail.com", "umarov@gmail.com"];
-      const ADMIN_NICKNAMES = ["abdulloh", "umarov"];
+      const ADMIN_EMAILS = ["abdulloh@gmail.com", "owner@gmail.com"];
+      const ADMIN_NICKNAMES = ["UmarofDev", "owner"];
 
       const isAdmin =
         ADMIN_EMAILS.includes(email.trim().toLowerCase()) ||

@@ -75,7 +75,7 @@ export default function AdminTable({ items, columns, onEdit, onDelete, actions, 
           <tr>
             {columns.map((c) => (<th key={c.key}>{c.title}</th>))}
             {(onEdit || onDelete || actions) && <th>Actions</th>}
-            <th>Password</th>
+
           </tr>
           
         </thead>
@@ -94,7 +94,7 @@ export default function AdminTable({ items, columns, onEdit, onDelete, actions, 
                     {onDelete && <button className="danger-btn" onClick={() => onDelete(item)}>Delete</button>}
                   </td>
                 )}
-                <td> {item?.password}</td>
+
             </tr>
           ))}
         </tbody>
