@@ -1,99 +1,78 @@
 {
-  "name": "InstaTok – Umarov Premium Platform",
-  "short_name": "Umarov VIP",
-  "description": "A next-gen social media app merging Instagram and TikTok features. Share, connect, and explore trending creators with Umarov Premium.",
+  "name": "Umarov.A – Premium Social Experience",
+  "short_name": "Umarov.A",
+  "description": "Umarov.A — Instagram va TikTok imkoniyatlarini birlashtirgan premium ijtimoiy tarmoq. Dunyo bo‘ylab ijodkorlar bilan ulashing, kashf eting va bog‘laning.",
+  "lang": "uz",
+  "dir": "ltr",
   "start_url": "/?utm_source=pwa",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "fullscreen", "minimal-ui"],
   "orientation": "portrait-primary",
-  "id": "/?source=pwa",
-  "dir": "ltr",
-  "lang": "en-US",
   "theme_color": "#0f0f0f",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "prefer_related_applications": false,
-  "categories": ["social", "entertainment", "photo", "video", "productivity"],
+  "categories": ["social", "entertainment", "photo", "video", "communication"],
 
   "icons": [
     {
-      "src": "/logo-192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "/logo-512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/logo-maskable-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/logo-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
 
   "screenshots": [
     {
-      "src": "/screens/screen1.png",
-      "sizes": "540x720",
+      "src": "/screenshots/feed-preview.png",
+      "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Feed view"
+      "label": "Asosiy lenta (Feed)"
     },
     {
-      "src": "/screens/screen2.png",
-      "sizes": "1280x720",
+      "src": "/screenshots/profile-preview.png",
+      "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "Explore trends"
+      "form_factor": "narrow",
+      "label": "Profil sahifasi"
     }
   ],
 
   "shortcuts": [
     {
-      "name": "Home",
+      "name": "Uy sahifa",
       "short_name": "Home",
-      "description": "Go to home feed",
+      "description": "Asosiy lentaga o‘tish",
       "url": "/?shortcut=home",
-      "icons": [{ "src": "/icons/home.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/icons/home.png", "sizes": "96x96" }]
     },
     {
-      "name": "Messages",
-      "short_name": "DMs",
-      "description": "Open your messages",
+      "name": "Xabarlar",
+      "short_name": "Messages",
+      "description": "Suhbatlarga kirish",
       "url": "/messages?shortcut=messages",
-      "icons": [{ "src": "/icons/chat.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/icons/messages.png", "sizes": "96x96" }]
     },
     {
-      "name": "Upload",
+      "name": "Yangi post",
       "short_name": "Upload",
-      "description": "Upload new content",
+      "description": "Yangi kontent yuklash",
       "url": "/upload?shortcut=upload",
-      "icons": [{ "src": "/icons/upload.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/icons/upload.png", "sizes": "96x96" }]
     },
     {
-      "name": "Profile",
-      "short_name": "Profile",
-      "description": "Go to your profile",
-      "url": "/profile?shortcut=profile",
-      "icons": [{ "src": "/icons/user.png", "sizes": "192x192" }]
-    }
-  ],
-
-  "protocol_handlers": [
-    {
-      "protocol": "web+instatok",
-      "url": "/open?content=%s"
+      "name": "Ulashish",
+      "short_name": "Share",
+      "description": "Telegram orqali ulashish",
+      "url": "/share?to=telegram",
+      "icons": [{ "src": "/icons/share.png", "sizes": "96x96" }]
     }
   ],
 
@@ -107,21 +86,36 @@
       "url": "url",
       "files": [
         {
-          "name": "media",
+          "name": "file",
           "accept": ["image/*", "video/*"]
         }
       ]
     }
   },
 
-  "edge_side_panel": {
-    "preferred_width": 480
-  },
-
   "related_applications": [
     {
       "platform": "webapp",
-      "url": "https://umarovi.netlify.app/manifest.json"
+      "url": "https://umarovi.netlify.app"
+    },
+    {
+      "platform": "webapp",
+      "url": "https://instagram-super.vercel.app/"
     }
-  ]
+  ],
+
+  "features": {
+    "notifications": true,
+    "sound_effects": true,
+    "animations": true,
+    "telegram_share": true,
+    "aesthetic_ui": true
+  },
+
+  "developer": {
+    "name": "Umarov Ry",
+    "url": "https://ryumarof.netlify.app"
+  },
+
+  "dir_name": "uz-UZ"
 }
